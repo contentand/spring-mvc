@@ -91,6 +91,7 @@
                 <version>2.2</version>
                 <configuration>
                     <url>http://localhost:8081/</url>
+                    <port>8081</port>
                     <server>TomcatServer</server>
                     <path>/spring-mvc</path>
                 </configuration>
