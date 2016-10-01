@@ -11,6 +11,7 @@ public class WebInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         ServletRegistration.Dynamic reg = servletContext.addServlet("front-controller",  DispatcherServlet.class);
+        reg.setInitParameter("contextConfigLocation", "/WEB-INF/spring-web/front-controller.xml");
         reg.setLoadOnStartup(1);
         reg.addMapping("/web/*");
     }
