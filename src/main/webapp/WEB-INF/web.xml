@@ -12,5 +12,14 @@
         Trying out different Spring features
     </description>
 
+    <servlet>
+        <servlet-name>front-controller</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>front-controller</servlet-name>
+        <url-pattern>/web/*</url-pattern>
+    </servlet-mapping>
 
 </web-app>
