@@ -28,4 +28,10 @@ public class AutoDetected {
     public String sayHiFrom(@RequestParam String from) {
         return "Hi, " + name + "!<br>From " + from;
     }
+
+    // By Presence of particular value in a particular parameter
+    @ResponseBody @RequestMapping(path = "/hi", params = {"from", "user=friend"})
+    public String sayHiFromDearFriend(@RequestParam String from) {
+        return "Hi, " + name + "!<br>From my dear " + from;
+    }
 }
