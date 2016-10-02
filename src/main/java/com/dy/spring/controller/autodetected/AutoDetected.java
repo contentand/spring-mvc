@@ -34,4 +34,10 @@ public class AutoDetected {
     public String sayHiFromDearFriend(@RequestParam String from) {
         return "Hi, " + name + "!<br>From my dear " + from;
     }
+
+    // By Presence/Value of particular header (EVALUATED AFTER PARAMETERS!!!)
+    @ResponseBody @RequestMapping(path="/hi", headers = {"from", "type=fantastic"})
+    public String sayHiViaHeader() {
+        return "Oh, hi! You are so clever!";
+    }
 }
