@@ -11,6 +11,7 @@ BROWSER='/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome'
 export JPDA_ADDRESS=8000
 export JPDA_TRANSPORT=dt_socket
 
+mvn clean package
 eval find $TOMCAT_HOME/webapps -mindepth 1 -delete
 eval cp target/$ARTIFACT_NAME.war $TOMCAT_HOME/webapps/
 eval find $TOMCAT_HOME/logs  -mindepth 1 -delete
