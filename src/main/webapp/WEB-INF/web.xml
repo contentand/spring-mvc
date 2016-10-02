@@ -26,4 +26,13 @@
         <url-pattern>/web/*</url-pattern>
     </servlet-mapping>
 
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/spring-root/application-context.xml</param-value>
+    </context-param>
+
 </web-app>
