@@ -7,7 +7,16 @@
 
     <!-- ControllerClassNameHandlerMapping: Deprecated way of setting up Request Handler -->
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
-    <bean class="com.dy.spring.controller.DetectedController"/>
+    <bean id="detectedController" class="com.dy.spring.controller.DetectedController"/>
+
+    <!-- SimpleUrlHandlerMapping: Static mapping. You indicate url - controller bondage -->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <value>
+                /declared.detected=detectedController
+            </value>
+        </property>
+    </bean>
 
 
 </beans>
