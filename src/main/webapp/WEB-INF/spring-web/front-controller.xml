@@ -5,4 +5,9 @@
            http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
+    <!-- ControllerClassNameHandlerMapping: Deprecated way of setting up Request Handler -->
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+    <bean class="com.dy.spring.controller.DetectedController"/>
+
+
 </beans>
