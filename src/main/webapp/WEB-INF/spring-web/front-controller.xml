@@ -2,10 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
            http://www.springframework.org/schema/mvc
-           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+           http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- ControllerClassNameHandlerMapping: Deprecated way of setting up Request Handler -->
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
@@ -24,5 +25,8 @@
         <bean class="com.dy.spring.interceptor.LoggingInterceptor"/>
     </mvc:interceptors>
 
+    <context:component-scan base-package="com.dy.spring.controller.autodetected"/> <!-- Imports @Component beans here-->
+    <context:annotation-config/> <!-- Enables @Autowired resolution -->
+    <mvc:annotation-driven/> <!-- Enables @Controller resolution -->
 
 </beans>
