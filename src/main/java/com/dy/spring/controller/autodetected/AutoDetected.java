@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AutoDetected {
@@ -39,5 +40,10 @@ public class AutoDetected {
     @ResponseBody @RequestMapping(path="/hi", headers = {"from", "type=fantastic"})
     public String sayHiViaHeader() {
         return "Oh, hi! You are so clever!";
+    }
+
+    @RequestMapping(path="page")
+    public ModelAndView getPage() {
+        return new ModelAndView("page");
     }
 }

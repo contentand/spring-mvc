@@ -29,4 +29,7 @@
     <context:annotation-config/> <!-- Enables @Autowired resolution -->
     <mvc:annotation-driven/> <!-- Enables @Controller resolution -->
 
+    <!-- XmlViewResolver automatic - /WEB-INF/views.xml -->
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver"/>
+
 </beans>
