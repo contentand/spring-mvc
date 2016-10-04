@@ -29,7 +29,10 @@
     <context:annotation-config/> <!-- Enables @Autowired resolution -->
     <mvc:annotation-driven/> <!-- Enables @Controller resolution -->
 
-    <!-- XmlViewResolver automatic - /WEB-INF/views.xml -->
-    <bean class="org.springframework.web.servlet.view.XmlViewResolver"/>
+    <!-- XmlViewResolver custom xml config for view location -->
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="location"
+                  value="/WEB-INF/spring-views/xml-view.xml" />
+    </bean>
 
 </beans>
