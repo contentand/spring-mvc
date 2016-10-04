@@ -46,4 +46,13 @@ public class AutoDetected {
     public ModelAndView getPage() {
         return new ModelAndView("page");
     }
+
+    @RequestMapping(path="pdf")
+    public ModelAndView getPdf() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("pdf");
+        mav.addObject("title", "My First Pdf");
+        mav.addObject("text", "This is the text that you are reading!");
+        return mav;
+    }
 }

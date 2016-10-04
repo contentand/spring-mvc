@@ -34,5 +34,4 @@
         <property name="location"
                   value="/WEB-INF/spring-views/xml-view.xml" />
     </bean>
-
 </beans>
