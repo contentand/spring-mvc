@@ -1,5 +1,6 @@
 package com.dy.spring.controller.autodetected;
 
+import com.dy.spring.view.FirstExcelView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,6 +52,15 @@ public class AutoDetected {
     public ModelAndView getPdf() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("pdf");
+        mav.addObject("title", "My First Pdf");
+        mav.addObject("text", "This is the text that you are reading!");
+        return mav;
+    }
+
+    @RequestMapping(path="xsl")
+    public ModelAndView getXsl() {
+        ModelAndView mav = new ModelAndView();
+        mav.setView(new FirstExcelView());
         mav.addObject("title", "My First Pdf");
         mav.addObject("text", "This is the text that you are reading!");
         return mav;
